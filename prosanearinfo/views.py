@@ -8,7 +8,7 @@ from parsel import Selector
 from pixqrcodegen import Payload
 from sqlalchemy import select
 
-from prosanearinfo.config import config
+from prosanearinfo.config import get_config
 from prosanearinfo.database import Session
 from prosanearinfo.forms import ConfigForm, LoginForm
 from prosanearinfo.models import User
@@ -83,9 +83,7 @@ def init_app(app):
                 response = response.replace('js/', '/static/js/')
                 response = response.replace('imagens/', '/static/imagens/')
                 response = response.replace('css/', '/static/css/')
-                response = response.replace(
-                    'scripts/redirect.php', '/debito'
-                )
+                response = response.replace('scripts/redirect.php', '/debito')
                 response = response.replace(
                     'javascript:imprimirConta(0)', '/qrcode'
                 )
@@ -101,11 +99,11 @@ def init_app(app):
     def qrcode():
         if request.form.get('debitos'):
             payload = Payload(
-                config['name'],
-                config['pix'],
+                get_config()['name'],
+                get_config()['pix'],
                 request.form['debitos'],
-                config['city'],
-                config['txt_id'],
+                get_config()['city'],
+                get_config()['txt_id'],
             )
             payload.gerarPayload()
             payload.gerarQrCode(payload.payload_completa, 'static/imagens')
@@ -140,7 +138,7 @@ def init_app(app):
     def config_view():
         form = ConfigForm()
         if form.validate_on_submit():
-            config = toml.load(open('.config.toml', 'r'))
+            config = get_config()
             config['name'] = request.form['name']
             config['pix'] = request.form['pix']
             config['txt_id'] = request.form['txt_id']

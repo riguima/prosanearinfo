@@ -1,3 +1,5 @@
 import toml
 
-config = toml.load(open('.config.toml', 'r'))
+
+def get_config():
+    return toml.load(open('.config.toml', 'r'))
