@@ -6,7 +6,7 @@
 
 {% block content %}
   <div class="qrcode-container">
-    <img src="{{ url_for('static', filename='imagens/pix-logo.jpeg') }}" alt="Pix Logo">
+    <img id="pix-img" src="{{ url_for('static', filename='imagens/pix-logo.jpeg') }}" alt="Pix Logo">
     <span class="price">R$ {{ price }}</span>
     <span>Escaneie o QR Code PIX no aplicativo do seu banco</span>
     <img id="qrcode-img" src="{{ url_for('static', filename='imagens/pixqrcodegen.png') }}" alt="QrCode">

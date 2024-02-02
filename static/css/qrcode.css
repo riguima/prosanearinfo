@@ -3,6 +3,8 @@ html {
   background: #F2F2F2;
 }
 .qrcode-container {
+  padding: 10px;
+  width: 100vw;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -27,4 +29,21 @@ html {
 #qrcode-img {
   width: 300px;
   height: 300px;
+}
+
+@media(max-width: 600px){
+  #pix-img {
+    width: 400px;
+  }
+  #qrcode-img {
+    width: 200px;
+    height: 200px;
+  }
+  .price {
+    font-size: 3rem;
+  }
+  .card div {
+    overflow: hidden;
+    flex-direction: column;
+  }
 }
