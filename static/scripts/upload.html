@@ -1,0 +1,1 @@
+Erro ao pesquisar cliente conexao: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1

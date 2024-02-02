@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+gunicorn = "*"
+toml = "*"
+httpx = "*"
+parsel = "*"
+flask-cors = "*"
+
+[dev-packages]
+blue = "*"
+isort = "*"
+ruff = "*"
+
+[requires]
+python_version = "3.11"

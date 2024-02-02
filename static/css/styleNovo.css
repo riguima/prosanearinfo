@@ -1,0 +1,491 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+* {padding:0;margin:0;}
+
+body {
+    font-size: 13px;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #686C7F;
+    background: url(imagens/bg_site.jpg);
+}
+
+table thead tr th {
+    padding:7px 0;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color:#FFF;
+    font-size: 15px;
+    font-weight: 600;
+    background:#1A515E;
+    border:none;
+}
+
+table > tbody > tr > td > table tbody > tr:nth-child(odd) {
+    background-color: #F2F5F7;
+}
+
+table > tbody > tr > td > table tbody > tr > td {
+    padding:5px 0;
+}
+.bg_up {
+    width: 100%;
+    background: url(imagens/bg_up.png) no-repeat;
+    height: 378px;
+    position: fixed;
+    bottom: 180px;
+}
+
+.topo {
+    width: 100%;
+    height: 35px;
+    background: url(imagens/bg_top.jpg) repeat-x;
+    position: fixed;
+    z-index: 999;
+    top:0;
+}
+.sistemaTopo {
+    height: auto;
+    background: #012732 url(imagens/bg_top.jpg) repeat-x;
+    padding-bottom: 7px;
+
+}
+/*.content {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    min-height: 500px;
+    min-width: 250px;
+    width: 95%;
+    margin: 0 auto;
+    z-index: 99999;
+}*/
+
+#formLogin {
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 100px;
+    height:300px
+}
+
+.imgIndex {
+    width:100%;
+    padding-top: 80px;
+    max-height: 150px;
+}
+
+.logoTopo {
+    max-height: 50px;
+}
+
+.btImprimir {
+    width:161px;
+    height:46px;
+    display:block;
+    background:url(imagens/btImprimir.png) no-repeat;
+}
+
+.btImprimirDA {
+    width:161px;
+    height:46px;
+    display:block;
+    background:url(imagens/btImprimir.png) no-repeat;
+}
+
+.btSolicitar {
+    width:161px;
+    height:46px;
+    display:block;
+    background:url(imagens/btSolicitar.png) no-repeat;
+}
+
+.btEnviar {
+    width:161px;
+    height:46px;
+    display:block;
+    background:url(imagens/btEnviar.png) no-repeat;
+}
+
+.btVoltar {
+    width:134px;
+    height:46px;
+    display:block;
+    background:url(imagens/btBack.png) no-repeat;
+}
+
+.btSair {
+    width:109px;
+    height:46px;
+    display:block;
+    background:url(imagens/btSair.png) no-repeat;
+}
+
+.btConta {
+    width:183px;
+    height:46px;
+    display:block;
+    background:url(imagens/btConta.png) no-repeat;
+}
+
+.btContaDA {
+    width:183px;
+    height:46px;
+    display:block;
+    background:url(imagens/btConta.png) no-repeat;
+}
+
+
+.esq {
+    float:left;
+    width:50%;
+}
+
+.esq .empresa {
+}
+
+.esq .empresa span {
+    font-size: 15px;
+    color: #018ABE;
+}
+
+.esq .empresa h2 {
+    font-size: 22px;
+    color: #018ABE;
+    line-height: 18px;
+}
+
+.esq .empresa .imgSenha {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #018ABE url(imagens/ico_senha.png) no-repeat center;
+}
+
+.esq .empresa .imgCpf {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background: #018ABE url(imagens/ico_cpf.png) no-repeat center;
+}
+
+.editor-field {
+    padding-left: 0;
+    height: 55px;
+    width: 300px;
+    float: right;
+    padding-top: 50px;
+    float:left;
+}
+
+.esq input[type="password"] {
+    width: 238px;
+    margin: 0;
+    height: 48px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border: none;
+    background: transparent;
+    border: 1px solid #999;
+    color: #686C7F;
+    padding-left: 10px;
+    font-family: Verdana, sans-serif;
+}
+
+.esq input[type="submit"] {
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    padding: 0 20px;
+    background: #018ABE;
+    font-family: Verdana, sans-serif;
+    float: left;
+    margin: 15px 0;
+    color: #FFF;
+    height: 40px;
+    width: 50%;
+}
+
+.dir {
+    float:right;
+    width:50%;
+}
+
+.dir .empresa {}
+
+.dir .empresa span {
+    float:right;
+	font-size: 15px;
+    color: #018ABE;
+}
+
+
+
+.logoTopo {
+    float:left;
+    margin-top: 3px;
+    margin-left:20px;
+}
+
+.textoTituloEmpresa {
+    float:left;
+    margin-left:20px;
+    margin-top: 16px;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: normal;
+}
+
+.config {
+    width:auto;
+    float: right;
+    margin-top: 3px;
+}
+
+.homeIco {
+    background: url(imagens/homeIco.png) no-repeat;
+    width: 24px;
+    height: 22px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 12px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+.homeIco a {
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+.logoutIco {
+    background: url(imagens/logoutIco.png) no-repeat;
+    width: 21px;
+    height: 22px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 12px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 20px;
+}
+.logoutIco a {
+    width:100%;
+    height:100%;
+    display:block;
+}
+.menuBt {
+    float:right;
+}
+.user {
+    text-align: right;
+    padding-right: 20px;
+    background: url(imagens/borda_topo_usuario.png) no-repeat center right;
+    float:right;
+}
+.right {
+    float:right
+}
+.user p {
+    color: #fff;
+}
+
+.user span {
+    color: #09C1FF;
+    font-size: 12px;
+}
+
+#menu {
+    list-style:none;
+}
+
+#menu li{
+    float:left;
+    width:45%;
+    height:120px;
+    background-color: #f0f0f0;
+    font-family: 'Lato', 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,1),0 2px 4px rgba(0,0,0,0.08),inset 0 -1px 0 rgba(0,0,0,0.25);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,1),0 2px 4px rgba(0,0,0,0.08),inset 0 -1px 0 rgba(0,0,0,0.25);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1),0 2px 4px rgba(0,0,0,0.08),inset 0 -1px 0 rgba(0,0,0,0.25);
+    text-shadow: 0 1px 0 white;
+    display:block;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    margin:0 20px 15px 20px;
+    min-width: 280px;
+}
+
+#menu li:hover {
+    cursor:pointer;
+}
+
+#menu li span {
+    font-family: 'Lato', 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+    float:right;
+    padding:10px 10px 0 0;
+    width:60%;
+    text-align:right;
+}
+#menu li span b {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:700;
+}
+
+#menu li h1 {
+    padding: 2px 0 4px 20px;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: -1px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+}
+#menu li.dadosCadastrais {
+    background: #f0f0f0 url('imagens/dadosBg.png') no-repeat 25px bottom;
+}
+
+#menu li.debitos {
+    background: #f0f0f0 url('imagens/debitosBg.png') no-repeat 25px bottom;
+}
+
+#menu li.lancamentos  {
+    background: #f0f0f0 url('imagens/lancamentosBg.png') no-repeat 25px bottom;
+}
+
+#menu li.leituras {
+    background: #f0f0f0 url('imagens/leiturasBg.png') no-repeat 25px bottom;
+}
+
+#menu li.contas {
+    background: #f0f0f0 url('imagens/contasBg.png') no-repeat 25px bottom;
+}
+
+#menu li.anexo {
+    background: #f0f0f0 url('imagens/anexoBg.png') no-repeat 25px bottom;
+}
+
+#menu li.banco {
+    background: #f0f0f0 url('imagens/bancoBg.png') no-repeat 25px bottom;
+}
+
+#menu li.simulacao {
+    background: #f0f0f0 url('imagens/leiturasBg.png') no-repeat 25px bottom;
+}
+
+#menu li.informaleitura {
+    background: #f0f0f0 url('imagens/hidrometroBg.png') no-repeat 25px bottom;
+}
+
+#menu li.certidao {
+    background: #f0f0f0 url('imagens/certidaoBg.png') no-repeat 25px bottom;
+}
+
+#menu li.solicitacoes {
+    background: #f0f0f0 url('imagens/solicitacoesBg.png') no-repeat 25px bottom;
+}
+
+#menu li.autenticacoes {
+    background: #f0f0f0 url('imagens/autenticacoesBg.png') no-repeat 25px bottom;
+}
+
+#menu li.sair {
+    background: #f0f0f0 url('imagens/sairBg.png') no-repeat 25px bottom;
+}
+
+#menu li.qualidade {
+    background: #f0f0f0 url('imagens/qualidadeBg.png') no-repeat 25px bottom;
+}
+
+#menu li.dadosCadastrais h1 {
+    background: #45A7B9;
+}
+
+#menu li.debitos h1 {
+    background:#DE815C;
+}
+
+#menu li.lancamentos h1 {
+    background:#AFDE5C;
+}
+
+#menu li.leituras h1 {
+    background:#DEB25C;
+}
+
+#menu li.contas h1 {
+    background:#5CAFDE;
+}
+
+#menu li.anexo h1 {
+    background:#678893;
+}
+#menu li.banco h1 {
+    background:#678893;
+}
+
+#menu li.simulacao h1 {
+    background:#00997a;
+}
+
+#menu li.informaleitura h1 {
+    background:#537c5c;
+}
+
+#menu li.certidao h1 {
+    background:#7C62AD;
+}
+
+#menu li.solicitacoes h1 {
+    background:#627AAD;
+}
+
+#menu li.autenticacoes h1 {
+    background:#B09573;
+}
+
+#menu li.sair h1 {
+    background:#E16051;
+}
+
+#menu li.qualidade h1 {
+    background:#627AAD;
+}
+
+#content {
+    position:relative;
+    width:100%;
+    margin:0 auto;
+    padding-top:120px;
+    max-width: 960px;
+    padding-bottom: 50px;
+}
+
+
+#footer {
+    width: 100%;
+    height: 30px;
+    background: #003040;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    z-index: 999;
+}
+
+#footer p {
+    font-size: 11px;
+    margin-top: 8px;
+    color: #ccc;
+}
+
+.limpa {
+    clear:both;
+}

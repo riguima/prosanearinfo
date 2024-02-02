@@ -1,0 +1,30 @@
+.btParcelamento {
+    width:161px;
+    height:46px;
+    display:block;
+    background:url(imagens/btParcelamento.png) no-repeat;
+}
+
+.btQuitacao {
+    width:161px;
+    height:46px;
+    display:block;
+    background:url(imagens/btQuitacao.png) no-repeat;
+}
+
+.btn_x {
+    background-color: #e7e7e7; 
+    color: black;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+    width: 50%;    
+}
+
+.txtParc{
+    width: 45px;
+    margin-left: 10px;
+}
