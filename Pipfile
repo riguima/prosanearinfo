@@ -7,14 +7,17 @@ name = "pypi"
 flask = "*"
 gunicorn = "*"
 toml = "*"
+flask-login = "*"
 httpx = "*"
 parsel = "*"
-flask-cors = "*"
+sqlalchemy = "*"
+pixqrcodegen = "*"
+flask-wtf = "*"
 
 [dev-packages]
+ruff = "*"
 blue = "*"
 isort = "*"
-ruff = "*"
 
 [requires]
 python_version = "3.11"

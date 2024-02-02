@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <link href="{{ url_for('static', filename='css/qrcode.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  <div class="qrcode-container">
+    <img src="{{ url_for('static', filename='imagens/pix-logo.jpeg') }}" alt="Pix Logo">
+    <span class="price">R$ {{ price }}</span>
+    <span>Escaneie o QR Code PIX no aplicativo do seu banco</span>
+    <img id="qrcode-img" src="{{ url_for('static', filename='imagens/pixqrcodegen.png') }}" alt="QrCode">
+    <span>Ou pague com PIX copia e cola</span>
+    <span>Este é o código para pagamento pix</span>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col">
+          <div class="card p-3 px-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-line me-2">{{ payload }}</span>
+              <button onclick="copy('{{ payload }}','#copy_button_1')" id="copy_button_1" class="btn btn-sm btn-success copy-button">Copiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='scripts/qrcode.js') }}"></script>
+{% endblock %}

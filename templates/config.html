@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Configuração</title>
+{% endblock %}
+
+{% block content %}
+  {% if error_message %}
+    <div class="text-center alert alert-danger" role="alert">{{ error_message }}</div>
+  {% endif %}
+  <form id="login-form" method="post">
+    {{ form.csrf_token }}
+    <div class="mb-3">
+      {{ form.name.label(class_="form-label") }}
+      {{ form.name(class_="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.city.label(class_="form-label") }}
+      {{ form.city(class_="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.pix.label(class_="form-label") }}
+      {{ form.pix(class_="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.txt_id.label(class_="form-label") }}
+      {{ form.txt_id(class_="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+  </form>
+{% endblock %}
