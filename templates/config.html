@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-  {% if error_message %}
-    <div class="text-center alert alert-danger" role="alert">{{ error_message }}</div>
+  {% if message %}
+    <div class="text-center alert alert-success" role="alert">{{ message }}</div>
   {% endif %}
   <form id="login-form" method="post">
     {{ form.csrf_token }}
@@ -28,4 +28,17 @@
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
   </form>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    var name = "{{ config.name }}"
+    var city = "{{ config.city }}"
+    var pix = "{{ config.pix }}"
+    var txt_id = "{{ config.txt_id }}"
+    document.querySelector('#name').value = name
+    document.querySelector('#city').value = city
+    document.querySelector('#pix').value = pix
+    document.querySelector('#txt_id').value = txt_id
+  </script>
 {% endblock %}
