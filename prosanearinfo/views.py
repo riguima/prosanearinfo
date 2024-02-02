@@ -21,6 +21,10 @@ def init_app(app):
             response = client.get(
                 'http://autoatendimento.prosanearinfo.com.br/v5.1/index.php?id=96AQ96X'
             ).text
+            response = response.replace('&ecirc;', 'ê')
+            response = response.replace('&ocirc;', 'ô')
+            response = response.replace('&atilde;', 'ã')
+            response = response.replace('Servi�o Aut�nomo de �gua e Esgoto de Sete Lagoas', 'Serviço Autônomo de Água e Esgoto de Sete Lagoas')
             response = response.replace('js/', '/static/js/')
             response = response.replace('imagens/', '/static/imagens/')
             response = response.replace('css/', '/static/css/')
@@ -93,6 +97,10 @@ def init_app(app):
                 )
                 response = response.replace('principal.php', '/')
                 response = response.replace('scripts/', '/static/scripts/')
+                response = response.replace('&ecirc;', 'ê')
+                response = response.replace('&ocirc;', 'ô')
+                response = response.replace('&atilde;', 'ã')
+                response = response.replace('Servi�o Aut�nomo de �gua e Esgoto de Sete Lagoas', 'Serviço Autônomo de Água e Esgoto de Sete Lagoas')
                 return response
 
     @app.post('/qrcode')

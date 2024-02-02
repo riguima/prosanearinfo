@@ -31,7 +31,7 @@ html {
   height: 300px;
 }
 
-@media(max-width: 600px){
+@media(max-width: 1500px){
   #pix-img {
     width: 400px;
   }
