@@ -140,6 +140,7 @@ def init_app(app):
     def config_view():
         form = ConfigForm()
         if form.validate_on_submit():
+            config = toml.load(open('.config.toml', 'r'))
             config['name'] = request.form['name']
             config['pix'] = request.form['pix']
             config['txt_id'] = request.form['txt_id']
