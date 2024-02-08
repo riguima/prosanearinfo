@@ -154,7 +154,6 @@ def init_app(app):
     @app.route('/config', methods=['GET', 'POST'])
     @login_required
     def config_view():
-        print(get_config()['pix'])
         form = ConfigForm()
         if form.validate_on_submit():
             config = get_config()
