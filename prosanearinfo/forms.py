@@ -9,19 +9,4 @@ class LoginForm(FlaskForm):
 
 
 class ConfigForm(FlaskForm):
-    name = StringField(
-        'Nome',
-        validators=[DataRequired()],
-    )
-    city = StringField(
-        'Cidade',
-        validators=[DataRequired()],
-    )
-    pix = StringField(
-        'Pix',
-        validators=[DataRequired()],
-    )
-    txt_id = StringField(
-        'TXT ID',
-        validators=[DataRequired()],
-    )
+    pix = StringField('Pix', validators=[DataRequired()])

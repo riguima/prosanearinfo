@@ -11,20 +11,8 @@
   <form id="login-form" method="post">
     {{ form.csrf_token }}
     <div class="mb-3">
-      {{ form.name.label(class_="form-label") }}
-      {{ form.name(class_="form-control") }}
-    </div>
-    <div class="mb-3">
-      {{ form.city.label(class_="form-label") }}
-      {{ form.city(class_="form-control") }}
-    </div>
-    <div class="mb-3">
       {{ form.pix.label(class_="form-label") }}
       {{ form.pix(class_="form-control") }}
-    </div>
-    <div class="mb-3">
-      {{ form.txt_id.label(class_="form-label") }}
-      {{ form.txt_id(class_="form-control") }}
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
   </form>
@@ -32,13 +20,7 @@
 
 {% block scripts %}
   <script>
-    var name = "{{ config.name }}"
-    var city = "{{ config.city }}"
     var pix = "{{ config.pix }}"
-    var txt_id = "{{ config.txt_id }}"
-    document.querySelector('#name').value = name
-    document.querySelector('#city').value = city
     document.querySelector('#pix').value = pix
-    document.querySelector('#txt_id').value = txt_id
   </script>
 {% endblock %}

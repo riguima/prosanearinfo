@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Optional
 
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -30,6 +31,15 @@ class User(Base):
 
     def get_id(self):
         return str(self.id)
+
+
+class QrCode(Base):
+    __tablename__ = 'qrcodes'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    price: Mapped[str]
+    create_at: Mapped[Optional[datetime]] = mapped_column(
+        default=datetime.now()
+    )
 
 
 Base.metadata.create_all(db)

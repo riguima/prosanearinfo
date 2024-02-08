@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Relatório</title>
+{% endblock %}
+
+{% block content %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td>Data/Hora</td>
+        <td>Valor</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for qrcode in qrcodes %}
+        <tr>
+          <td>{{ qrcode.create_at.strftime('%d/%m/%Y às %H:%M') }}</td>
+          <td>{{ qrcode.price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

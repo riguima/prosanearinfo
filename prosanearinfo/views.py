@@ -11,7 +11,7 @@ from sqlalchemy import select
 from prosanearinfo.config import get_config
 from prosanearinfo.database import Session
 from prosanearinfo.forms import ConfigForm, LoginForm
-from prosanearinfo.models import User
+from prosanearinfo.models import QrCode, User
 
 
 def init_app(app):
@@ -24,7 +24,10 @@ def init_app(app):
             response = response.replace('&ecirc;', 'ê')
             response = response.replace('&ocirc;', 'ô')
             response = response.replace('&atilde;', 'ã')
-            response = response.replace('Servi�o Aut�nomo de �gua e Esgoto de Sete Lagoas', 'Serviço Autônomo de Água e Esgoto de Sete Lagoas')
+            response = response.replace(
+                'Servi�o Aut�nomo de �gua e Esgoto de Sete Lagoas',
+                'Serviço Autônomo de Água e Esgoto de Sete Lagoas',
+            )
             response = response.replace('js/', '/static/js/')
             response = response.replace('imagens/', '/static/imagens/')
             response = response.replace('css/', '/static/css/')
@@ -100,7 +103,10 @@ def init_app(app):
                 response = response.replace('&ecirc;', 'ê')
                 response = response.replace('&ocirc;', 'ô')
                 response = response.replace('&atilde;', 'ã')
-                response = response.replace('Servi�o Aut�nomo de �gua e Esgoto de Sete Lagoas', 'Serviço Autônomo de Água e Esgoto de Sete Lagoas')
+                response = response.replace(
+                    'Servi�o Aut�nomo de �gua e Esgoto de Sete Lagoas',
+                    'Serviço Autônomo de Água e Esgoto de Sete Lagoas',
+                )
                 return response
 
     @app.post('/qrcode')
@@ -115,6 +121,10 @@ def init_app(app):
             )
             payload.gerarPayload()
             payload.gerarQrCode(payload.payload_completa, 'static/imagens')
+            with Session() as session:
+                qrcode = QrCode(price=request.form['debitos'])
+                session.add(qrcode)
+                session.commit()
             return render_template(
                 'qrcode.html',
                 payload=payload.payload_completa,
@@ -153,5 +163,14 @@ def init_app(app):
             config['txt_id'] = request.form['txt_id']
             config['city'] = request.form['city']
             toml.dump(config, open('.config.toml', 'w'))
-            return render_template('config.html', form=form, config=get_config(), message='Salvo')
+            return render_template(
+                'config.html', form=form, config=get_config(), message='Salvo'
+            )
         return render_template('config.html', form=form, config=get_config())
+
+    @app.get('/relatorio')
+    def report():
+        with Session() as session:
+            return render_template(
+                'report.html', qrcodes=session.scalars(select(QrCode))
+            )
