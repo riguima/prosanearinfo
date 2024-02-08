@@ -157,10 +157,7 @@ def init_app(app):
         form = ConfigForm()
         if form.validate_on_submit():
             config = get_config()
-            config['name'] = request.form['name']
             config['pix'] = request.form['pix']
-            config['txt_id'] = request.form['txt_id']
-            config['city'] = request.form['city']
             toml.dump(config, open('.config.toml', 'w'))
             return render_template(
                 'config.html', form=form, config=get_config(), message='Salvo'
