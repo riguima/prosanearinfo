@@ -2,23 +2,26 @@
 
 {% block head %}
   <title>Relatório</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
 {% endblock %}
 
 {% block content %}
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <td>Data/Hora</td>
-        <td>Valor</td>
-      </tr>
-    </thead>
-    <tbody>
-      {% for qrcode in qrcodes %}
+  <div class="report-table-container">
+    <table class="table table-dark table-hover table-striped">
+      <thead>
         <tr>
-          <td>{{ qrcode.create_at.strftime('%d/%m/%Y às %H:%M') }}</td>
-          <td>{{ qrcode.price }}</td>
+          <td>Data/Hora</td>
+          <td>Valor</td>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {% for qrcode in qrcodes %}
+          <tr>
+            <td>{{ qrcode.create_at.strftime('%d/%m/%Y às %H:%M') }}</td>
+            <td>{{ qrcode.price }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
