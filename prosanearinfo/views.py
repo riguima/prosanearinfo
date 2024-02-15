@@ -1,4 +1,5 @@
 import re
+from datetime import datetime, timedelta
 
 import toml
 from flask import redirect, render_template, request, url_for
@@ -85,7 +86,7 @@ def init_app(app):
                 )
                 response = response.replace(
                     selector.css('.btConta').get(),
-                    '<input type="submit" class="btConta" value="">',
+                    '<input type="submit" form="enviarDebitos" class="btConta" value="">',
                 )
                 response = response.replace('js/', '/static/js/')
                 response = response.replace('imagens/', '/static/imagens/')
@@ -122,7 +123,7 @@ def init_app(app):
             payload.gerarPayload()
             payload.gerarQrCode(payload.payload_completa, 'static/imagens')
             with Session() as session:
-                qrcode = QrCode(price=request.form['debitos'])
+                qrcode = QrCode(price=request.form['debitos'], create_at=datetime.now() - timedelta(hours=3))
                 session.add(qrcode)
                 session.commit()
             return render_template(
